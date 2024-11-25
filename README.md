@@ -17,17 +17,18 @@ In the same folder as Api-Automation-Testing.postman_collection.json, create a f
 
 𝗡𝗼𝘁𝗲: 
 Make sure Docker is installed and running on your system
+
 Use PowerShell, Terminal, or Command Prompt to execute Docker commands
 
-### This creates an empty Dockerfile in the current directory
+#### This creates an empty Dockerfile in the current directory
 ```
 New-Item -ItemType File -Name Dockerfile
 ```
-### PowerShell allows you to open a file in Notepad with the following command
+#### PowerShell allows you to open a file in Notepad with the following command
 ```
 notepad Dockerfile
 ```
-### Dockerfile
+#### Dockerfile
 ```
 # Use the official Newman image
 FROM postman/newman:latest
@@ -49,15 +50,15 @@ docker build -t postman_test .
 ![img 3](https://github.com/user-attachments/assets/57e99193-85a6-42cd-bc1a-7590e47ca60e)
 
 ## Step 4: Push the Image to Docker Hub
-### Log in to Docker Hub
+#### Log in to Docker Hub
 ```
 docker login
 ```
-### Tag the image with your Docker Hub username
+#### Tag the image with your Docker Hub username
 ```
 docker tag postman_test <your_dockerhub_username>/postman_test
 ```
-### Push the image to Docker Hub
+#### Push the image to Docker Hub
 ```
 docker push <your_dockerhub_username>/postman_test
 ```
@@ -65,11 +66,11 @@ docker push <your_dockerhub_username>/postman_test
 
 ## Step 5: Download and Run the Image
 On any system with Docker installed, you can pull and run your Postman collection
-### Pull the image
+#### Pull the image
 ```
 docker pull <your_dockerhub_username>/postman_test
 ```
-### Run the container
+#### Run the container
 ```
 docker run <your_dockerhub_username>/postman_test
 ```
